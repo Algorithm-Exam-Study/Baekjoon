@@ -112,7 +112,7 @@ public class Exam_4179 {
 
             if(isFire == 1) {
                 // 위
-                if(y - 1 > 0 && map[y - 1][x] != '#' && map[y - 1][x] != 'F'){
+                if(y - 1 >= 0 && map[y - 1][x] != '#' && map[y - 1][x] != 'F'){
                     queue.add(new int[] {y - 1, x, 1, time + 1});
                     map[y - 1][x] = 'F';
                 }
@@ -130,32 +130,32 @@ public class Exam_4179 {
                 }
 
                 // 왼쪽
-                if(x - 1 > 0 && map[y][x - 1] != '#' && map[y][x - 1] != 'F') {
+                if(x - 1 >= 0 && map[y][x - 1] != '#' && map[y][x - 1] != 'F') {
                     queue.add(new int[] {y, x - 1, 1, time + 1});
                     map[y][x - 1] = 'F';
                 }
 
             } else { // 지훈이면
                 // 위
-                if(y - 1 > 0 && map[y - 1][x] != '#' && map[y - 1][x] != 'J' && map[y - 1][x] != 'F' && map[y - 1][x] == '.'){
+                if(y - 1 >= 0 && map[y - 1][x] == '.'){
                     queue.add(new int[] {y - 1, x, 0, time + 1});
                     map[y - 1][x] = 'J';
                 }
 
                 // 오른쪽
-                if(x + 1 < map[0].length && map[y][x + 1] != '#' &&  map[y][x + 1] != 'J'  && map[y][x + 1] != 'F' && map[y][x + 1] == '.') {
+                if(x + 1 < map[0].length && map[y][x + 1] == '.') {
                     queue.add(new int[] {y, x + 1, 0, time + 1});
                     map[y][x + 1] = 'J';
                 }
 
                 // 아래
-                if(y + 1 < map.length && map[y + 1][x] != '#' &&  map[y + 1][x] != 'J' && map[y + 1][x] != 'F' && map[y + 1][x] == '.') {
+                if(y + 1 < map.length && map[y + 1][x] == '.') {
                     queue.add(new int[] {y + 1, x, 0, time + 1});
                     map[y + 1][x] = 'J';
                 }
 
                 // 왼쪽
-                if(x - 1 > 0 && map[y][x - 1] != '#' && map[y][x - 1] != 'J' && map[y][x - 1] != 'F' && map[y][x - 1] == '.') {
+                if(x - 1 >= 0 && map[y][x - 1] == '.') {
                     queue.add(new int[] {y, x - 1, 0, time + 1});
                     map[y][x - 1] = 'J';
                 }
